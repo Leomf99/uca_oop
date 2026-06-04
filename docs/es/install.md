@@ -1,0 +1,74 @@
+# Instalación
+
+Lumen es sin build, módulos ES nativos y cero dependencias de runtime — así que "instalar"
+puede ser tan ligero como apuntar a un CDN o copiar una carpeta. Elige lo que encaje con tu
+montaje.
+
+## Opción 1 — CDN, sin instalar (lo más rápido)
+
+Añade un import map y carga desde un CDN (jsDelivr sirve el repo de GitHub directamente):
+
+```html
+<script type="importmap">
+{
+  "imports": {
+    "lumenjs": "https://cdn.jsdelivr.net/gh/dragones-tech/lumen@main/src/index.js",
+    "lumenjs/": "https://cdn.jsdelivr.net/gh/dragones-tech/lumen@main/src/"
+  }
+}
+</script>
+
+<script type="module">
+  import { View } from 'lumenjs';
+  // …tu app
+</script>
+```
+
+Para producción fija un tag o commit en vez de `@main` (p. ej. `@v0.1.0`) para que no cambie bajo tus pies.
+
+## Opción 2 — copiar `src/` (lo más transparente)
+
+Lumen son solo archivos `.js` planos. Copia el `src/` del repo en tu proyecto (p. ej.
+`vendor/lumen/`) e impórtalo — relativo o por import map:
+
+```html
+<script type="importmap">
+{ "imports": { "lumenjs": "/vendor/lumen/index.js", "lumenjs/": "/vendor/lumen/" } }
+</script>
+```
+
+El código es tuyo, sin gestor de paquetes, nada que se actualice a tus espaldas. Muy de marca.
+
+## Opción 3 — npm / GitHub
+
+```bash
+npm i @jehosogo/lumenjs     # publicado en npm
+# o directo desde GitHub:
+npm i github:dragones-tech/lumen
+```
+
+Los bundlers y Node resuelven `@jehosogo/lumenjs` por el campo `exports` del paquete.
+En el navegador **sin** bundler, igual añade un import map apuntando el especificador a los
+archivos instalados (p. ej. `node_modules/@jehosogo/lumenjs/src/index.js`), porque
+los navegadores no resuelven especificadores "pelados" por sí solos.
+
+## Servirlo
+
+Cualquier servidor estático sirve (los imports de módulos ES están bloqueados en `file://`).
+El repo trae uno cero-dependencias con live reload:
+
+```bash
+npm run serve   # → http://localhost:8000
+```
+
+## Verificación de tipos (opcional)
+
+Los tipos son JSDoc; verifícalos con TypeScript (solo dev, nunca corre en el navegador):
+
+```bash
+npm i -D typescript
+npm run check   # tsc --noEmit
+```
+
+> Estado: publicado en npm como `@jehosogo/lumenjs`, código en GitHub (`dragones-tech/lumen`);
+> el CDN y `github:` install también funcionan.

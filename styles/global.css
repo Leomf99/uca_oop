@@ -1,0 +1,25 @@
+@import "./navbar.css";
+@import "./hero.css";
+@import "./productItem.css";
+@import "./productsList.css";
+
+h1 {
+  color: rgb(29, 140, 214);
+}
+h2 {
+  color: rgb(0, 78, 78);
+}
+
+button {
+  border: none;
+  border-radius: 6px;
+  padding-block: 0.5rem;
+  padding-inline: 0.35rem;
+  font-size: 1rem;
+  background-color: rgb(97, 151, 231);
+  color: aliceblue;
+  transition: all 0.1s ease-in-out;
+}
+button:active {
+  background-color: rgb(36, 54, 102);
+}

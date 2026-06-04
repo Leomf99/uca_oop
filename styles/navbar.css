@@ -1,0 +1,11 @@
+nav {
+  display: flex;
+  gap: 1rem;
+  height: min-content;
+  border-bottom: 3px solid #223542;
+}
+
+nav > button {
+  background-color: rgb(14, 134, 134);
+  margin-bottom: 0.5rem;
+}

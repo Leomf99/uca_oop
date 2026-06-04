@@ -1,0 +1,9 @@
+button.add {
+  margin-left: 0.5rem;
+  padding-block: 0.25rem;
+  padding-inline: 0.25rem;
+  background-color: rgb(110, 189, 100);
+}
+button.add:active {
+  background-color: rgb(36, 102, 71);
+}

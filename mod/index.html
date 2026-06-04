@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>MOD Example</title>
+    <link rel="stylesheet" href="../styles/global.css" />
+  </head>
+  <body>
+    <template id="app-layout">
+      <div class="app">
+        <section data-ref="navbar"></section>
+        <section data-ref="main"></section>
+      </div>
+    </template>
+
+    <template id="navbar">
+      <nav>
+        <button data-ref="home">Inicio</button>
+        <button data-ref="orders">Pedidos</button>
+      </nav>
+    </template>
+
+    <template id="hero">
+      <section class="hero" data-ref="hero-section">
+        <h1>Bienvenidos a Maker's On Demand!</h1>
+        <h2>Pulsa el botón para ver nuestros productos</h2>
+        <button class="hero-button" data-ref="productButton" type="button">
+          Click aquí
+        </button>
+        <div class="heroImg-container">
+          <img
+            class="heroImg"
+            data-ref="productImage"
+            src="../../public/logo.jpeg"
+            alt="Productos"
+          />
+        </div>
+      </section>
+    </template>
+
+    <template id="orders">
+      <section>
+        <h2>Ordena tus pedidos</h2>
+        <div data-ref="products"></div>
+      </section>
+    </template>
+
+    <template id="product-list">
+      <div class="products">
+        <form data-ref="form">
+          <input
+            data-ref="input"
+            type="text"
+            placeholder="Ordena tus pedidos…"
+            autocomplete="off"
+          /><button class="add">add</button>
+        </form>
+        <ul data-ref="items"></ul>
+      </div>
+    </template>
+
+    <template id="product">
+      <li>
+        <label> <span data-ref="text"></span></label>
+        <button class="remove" data-ref="remove">×</button>
+      </li>
+    </template>
+
+    <div id="app"></div>
+
+    <script type="module">
+      import { AppLayout } from "../views/appLayout.js";
+
+      new AppLayout().mount(document.querySelector("#app"));
+    </script>
+  </body>
+</html>

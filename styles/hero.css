@@ -1,0 +1,14 @@
+.heroImg-container {
+  width: 300px;
+  height: 300px;
+}
+
+.heroImg {
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+}
+
+.hero-button {
+  margin-bottom: 1rem;
+}
