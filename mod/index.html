@@ -25,16 +25,9 @@
       <section class="hero" data-ref="hero-section">
         <h1>Bienvenidos a Maker's On Demand!</h1>
         <h2>Pulsa el botón para ver nuestros productos</h2>
-        <button class="hero-button" data-ref="productButton" type="button">
-          Click aquí
-        </button>
+        <button class="hero-button" data-ref="productButton" type="button">Click aquí</button>
         <div class="heroImg-container">
-          <img
-            class="heroImg"
-            data-ref="productImage"
-            src="../../public/logo.jpeg"
-            alt="Productos"
-          />
+          <img class="heroImg" data-ref="productImage" src="../../public/logo.jpeg" alt="Productos" />
         </div>
       </section>
     </template>
@@ -48,21 +41,24 @@
 
     <template id="product-list">
       <div class="products">
-        <form data-ref="form">
-          <input
-            data-ref="input"
-            type="text"
-            placeholder="Ordena tus pedidos…"
-            autocomplete="off"
-          /><button class="add">add</button>
-        </form>
+        <form data-ref="form"><input data-ref="input" type="text" placeholder="Ordena tus pedidos…" autocomplete="off" /><button class="add">add</button></form>
         <ul data-ref="items"></ul>
       </div>
     </template>
 
+    <template id="color-picker">
+      <span class="picker">
+        <span>Escoge el color</span>
+        <button data-ref="left"><</button>
+        <span class="color-viewer" data-ref="color"></span>
+        <button data-ref="right">></button>
+      </span>
+    </template>
+
     <template id="product">
       <li>
-        <label> <span data-ref="text"></span></label>
+        <label> <span class="item" data-ref="text"></span></label>
+        <color-widget></color-widget>
         <button class="remove" data-ref="remove">×</button>
       </li>
     </template>
@@ -70,9 +66,9 @@
     <div id="app"></div>
 
     <script type="module">
-      import { AppLayout } from "../views/appLayout.js";
+      import { AppLayout } from '../views/appLayout.js';
 
-      new AppLayout().mount(document.querySelector("#app"));
+      new AppLayout().mount(document.querySelector('#app'));
     </script>
   </body>
 </html>

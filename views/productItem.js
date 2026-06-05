@@ -1,12 +1,13 @@
-import { View, slideIn, slideOut } from "../src/index.js";
+import { View, slideIn, slideOut } from '../src/index.js';
+import { ColorPicker } from './colorPicker.js';
 
 export class ProductItem extends View {
-  static template = "#product";
+  static template = '#product';
 
   onMount() {
     const { model } = this.props;
-    this.ui.text.textContent = model.get("text");
-    this.listen(this.ui.remove, "click", this.remove);
+    this.ui.text.textContent = model.get('text');
+    this.listen(this.ui.remove, 'click', this.remove);
   }
 
   remove = () => this.props.onRemove();

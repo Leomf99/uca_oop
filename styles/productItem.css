@@ -3,4 +3,10 @@ button.remove {
   border-radius: 50%;
   width: 30px;
   height: 30px;
+  margin-left: 2rem;
+}
+
+.item {
+  color: cadetblue;
+  font-weight: 700;
 }

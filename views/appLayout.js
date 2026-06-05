@@ -1,7 +1,10 @@
+// Views
 import { View } from '../src/index.js';
 import { NavBar } from '../views/navbar.js';
 import { Hero } from '../views/hero.js';
 import { Orders } from '../views/orders.js';
+
+//Models
 import { heroModel } from '../models/heroModel.js';
 
 export class AppLayout extends View {

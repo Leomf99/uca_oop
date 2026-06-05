@@ -1,7 +1,8 @@
-@import "./navbar.css";
-@import "./hero.css";
-@import "./productItem.css";
-@import "./productsList.css";
+@import './navbar.css';
+@import './hero.css';
+@import './productItem.css';
+@import './productsList.css';
+@import './colorPicker.css';
 
 h1 {
   color: rgb(29, 140, 214);
