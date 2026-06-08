@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Lumen · Orders</title>
+    <style>
+      body {
+        font: 15px/1.5 system-ui, sans-serif;
+        margin: 2rem auto;
+        max-width: 40rem;
+        padding: 0 1rem;
+      }
+      h1 {
+        font-size: 1.5rem;
+      }
+      h2 {
+        font-size: 1rem;
+        text-transform: uppercase;
+        letter-spacing: 0.05em;
+        color: #555;
+        margin: 0;
+      }
+      button,
+      input {
+        font: inherit;
+      }
+      button {
+        padding: 0.3rem 0.6rem;
+        cursor: pointer;
+      }
+      input[type='text'] {
+        padding: 0.35rem 0.5rem;
+      }
+      .order {
+        display: flex;
+        gap: 0.4rem;
+        align-items: center;
+        margin: 1rem 0;
+      }
+      .list-header {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin: 1.5rem 0 0.5rem;
+      }
+      .products {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+      }
+      .product {
+        display: flex;
+        align-items: center;
+        gap: 0.4rem;
+        padding: 0.5rem 0;
+        border-top: 1px solid #eee;
+      }
+      .product .view,
+      .product .edit {
+        display: flex;
+        align-items: center;
+        gap: 0.4rem;
+      }
+      .product .edit {
+        display: none;
+      }
+      .product.editing .view {
+        display: none;
+      }
+      .product.editing .edit {
+        display: flex;
+      }
+      .product .view span:first-child {
+        min-width: 8rem;
+      }
+      .error {
+        color: #c00;
+        font-size: 0.85rem;
+      }
+    </style>
+  </head>
+  <body>
+    <template id="app-layout">
+      <div>
+        <h1>Pedido</h1>
+        <div data-ref="orderSlot"></div>
+        <div class="list-header">
+          <h2>Productos (<span data-ref="count">0</span>)</h2>
+          <button data-ref="clear">vaciar</button>
+        </div>
+        <div data-ref="listSlot"></div>
+      </div>
+    </template>
+
+    <template id="order-view">
+      <div class="order">
+        <input data-ref="input" type="text" placeholder="Nombre del producto" />
+        <button data-ref="add">add</button>
+        <span class="error" data-ref="error"></span>
+      </div>
+    </template>
+
+    <template id="product-list">
+      <ul data-ref="list" class="products"></ul>
+    </template>
+
+    <template id="product-view">
+      <li class="product">
+        <span class="view">
+          <span data-ref="title"></span>
+          <button data-ref="edit">editar</button>
+          <button data-ref="remove">x</button>
+        </span>
+        <span class="edit">
+          <input data-ref="input" type="text" />
+          <button data-ref="save">guardar</button>
+          <button data-ref="cancel">cancelar</button>
+          <span class="error" data-ref="error"></span>
+        </span>
+      </li>
+    </template>
+
+    <div id="app"></div>
+
+    <script type="module">
+      import { AppLayout } from './views/AppLayout.js';
+      new AppLayout().mount(document.querySelector('#app'));
+    </script>
+  </body>
+</html>
