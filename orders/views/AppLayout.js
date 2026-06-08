@@ -10,7 +10,8 @@ export class AppLayout extends View {
   static regions = { order: 'orderSlot', list: 'listSlot' };
 
   onCreate() {
-    this.products = new ProductCollection([ // paso 4 - Aqui se agregan al inicio algunos productos ya existentes a la coleccion
+    this.products = new ProductCollection([
+      // paso 4 - Aqui se agregan al inicio algunos productos ya existentes a la coleccion
       { id: 1, title: 'Manzana' },
       { id: 2, title: 'Pan' },
     ]);
@@ -20,14 +21,14 @@ export class AppLayout extends View {
   onMount() {
     this.regions.order.show(new OrderView({ onAdd: this.addProduct }));
     this.regions.list.show(new ProductCollectionView({ collection: this.products }));
-    for (const event of ['add', 'remove', 'reset'])
-      this.products.on(event, this.updateCount, { signal: this.signal });
+    for (const event of ['add', 'remove', 'reset']) this.products.on(event, this.updateCount, { signal: this.signal });
     this.listen(this.ui.clear, 'click', this.clearAll);
     this.updateCount();
   }
 
   addProduct = (productTitle) => {
     this.products.add({ id: this.nextId++, title: productTitle }); // Aqui se agrega el producto
+    console.log(this.nextId);
   };
 
   clearAll = () => this.products.reset([]); //Boton para borrar todos los productos

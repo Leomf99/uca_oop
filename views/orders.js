@@ -1,25 +1,24 @@
 import { View, Model, Collection } from '../src/index.js';
-import { ProductsList } from './productsList.js';
-
-class Product extends Model {}
+import { ProductCollection } from './collectionViews/ProductCollection.js';
 
 export class Orders extends View {
   static template = '#orders';
-  static regions = { products: 'products' };
+  static regions = { orderInput: 'orderInputSlot', list: 'listSlot' };
 
-  onMount() {
-    this.showProducts();
+  onCreate() {
+    this.products = new ProductCollection([
+      { id: 1, title: 'Portavaso' },
+      { id: 2, title: 'Estatuilla' },
+    ]);
+    this.nextId = 3;
   }
+
+  onMount() {}
 
   animateIn() {
     return slideIn(this.el);
   }
   animateOut() {
     return slideOut(this.el);
-  }
-
-  showProducts() {
-    const products = new Collection([], Product);
-    this.regions.products.show(new ProductsList({ collection: products }));
   }
 }

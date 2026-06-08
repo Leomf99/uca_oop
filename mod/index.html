@@ -34,14 +34,23 @@
 
     <template id="orders">
       <section>
-        <h2>Ordena tus pedidos</h2>
-        <div data-ref="products"></div>
+        <h2>Página de pedidos</h2>
+        <div data-ref="orderInputSlot"></div>
+        <h3>Productos</h3>
+        <div data-ref="listSlot"></div>
       </section>
+    </template>
+
+    <template id="order-input">
+      <div class="order">
+        <input data-ref="input" type="text" placeholder="Ordena tus pedidos..." />
+        <button data-ref="add">add</button>
+        <span class="error" data-ref="error"></span>
+      </div>
     </template>
 
     <template id="product-list">
       <div class="products">
-        <form data-ref="form"><input data-ref="input" type="text" placeholder="Ordena tus pedidos…" autocomplete="off" /><button class="add">add</button></form>
         <ul data-ref="items"></ul>
       </div>
     </template>
@@ -55,11 +64,19 @@
       </span>
     </template>
 
-    <template id="product">
-      <li>
-        <label> <span class="item" data-ref="text"></span></label>
-        <color-widget></color-widget>
-        <button class="remove" data-ref="remove">×</button>
+    <template id="product-view">
+      <li class="product">
+        <span class="view">
+          <span data-ref="title"></span>
+          <button data-ref="edit">editar</button>
+          <button data-ref="remove">x</button>
+        </span>
+        <span class="edit">
+          <input data-ref="input" type="text" />
+          <button data-ref="save">guardar</button>
+          <button data-ref="cancel">cancelar</button>
+          <span class="error" data-ref="error"></span>
+        </span>
       </li>
     </template>
 

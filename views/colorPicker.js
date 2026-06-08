@@ -27,5 +27,3 @@ export class ColorPicker extends View {
     this.ui.color.style.backgroundColor = this.colors[this.n];
   }
 }
-
-defineElement('color-widget', ColorPicker);
