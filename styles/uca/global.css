@@ -1,0 +1,63 @@
+@import "tailwindcss";
+
+:root {
+  /* Typography */
+  --font-sans: "Darker Grotesque", "Segoe UI", Tahoma, Geneva, Verdana,
+    sans-serif;
+  --font-serif: "Brygada 1918", Georgia, "Times New Roman", serif;
+  --g-size: clamp(1rem, 0.886rem + 0.456vi, 1.25rem);
+
+  /* Brand and UI colors */
+  --color-mainBlue: #272f69;
+  --color-mainRed: #a9261e;
+
+  /* Image mask */
+  /* --mask-x: 240px;
+  --mask-y: 180px;
+  --mask-radius: 120px;
+  --mask-softness: 30px; */
+
+  --color-bg: #0f0d0e;
+  --color-text: #f8f6e0;
+  --color-muted: #d9d9d9;
+
+  /* Spaces */
+  --hor-padding: 8.333%;
+  --hor-padding-md: 4.166%;
+
+  --mid-col: 4.166%;
+  --col-1: 8.333%;
+  --col-2: 16.666%;
+  --col-3: 24.999%;
+  --col-4: 33.332%;
+  --col-5: 41.665%;
+  --col-6: 49.998%;
+  --col-7: 58.331%;
+  --col-8: 66.664%;
+  --col-9: 74.997%;
+  --col-10: 83.33%;
+  --col-11: 91.663%;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+html::-webkit-scrollbar,
+body::-webkit-scrollbar {
+  display: none;
+}
+
+body {
+  font-family: var(--font-sans);
+  background-color: var(--color-bg);
+  color: var(--color-text);
+  line-height: 1.5;
+  font-size: var(--g-size);
+}
+
+@import "./landing/hero.css";

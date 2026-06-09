@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>UCA</title>
+    <link rel="stylesheet" href="../styles/uca/global.css" />
+  </head>
+  <body>
+    <template id="hero">
+      <section>
+        <div class="hero-image-wrap">
+          <img
+            src="../public/uca/landing/Campus.jpg"
+            alt="Hero image of the campus"
+            class="hero-image"
+          />
+        </div>
+      </section>
+    </template>
+
+    <template id="landing">
+      <div data-ref="hero"></div>
+    </template>
+
+    <template id="app-layout">
+      <div data-ref="page"></div>
+    </template>
+
+    <div id="app"></div>
+    <script type="module"></script>
+  </body>
+</html>
